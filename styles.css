@@ -58,6 +58,22 @@ nav{
 nav ul{display:flex;gap:1.5rem;list-style:none}
 nav a:hover{opacity:.7}
 
+/* Botón idioma */
+.lang-btn{
+  margin-left:1rem;
+  padding:.4rem .9rem;
+  font-weight:600;
+  background:var(--accent);
+  color:#000;
+  border:none;
+  border-radius:1.5rem;
+  cursor:pointer;
+  box-shadow:0 0 8px var(--accent);
+  transition:filter .2s;
+}
+.lang-btn:hover{filter:brightness(.9);}
+@media(max-width:540px){.lang-btn{font-size:.8rem;padding:.35rem .8rem;}}
+
 /* ======================================================
    HERO
    ====================================================== */

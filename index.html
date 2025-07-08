@@ -1,219 +1,370 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="Portafolio">Luis Romero • Portafolio / CV</title>
 
-  <title>Luis Romero • Developer Portfolio</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Fira+Code&display=swap" rel="stylesheet" />
+    <!-- Font-Awesome -->
+    <script
+      src="https://kit.fontawesome.com/a9e2a5ad1d.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Font Awesome icons -->
-  <script src="https://kit.fontawesome.com/a9e2a5ad1d.js" crossorigin="anonymous"></script>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-  <!-- Hoja de estilos externa -->
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <!-- ─ blobs decorativos ─ -->
-  <span class="blob one"></span>
-  <span class="blob two"></span>
+  <body>
+    <!-- blobs decorativos -->
+    <span class="blob one"></span>
+    <span class="blob two"></span>
 
-  <!-- ─ NAVBAR ─ -->
-  <nav>
-    <strong>Luis</strong>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#highlights">Highlights</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#stats">Stats</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- ===== NAVBAR ===== -->
+    <nav>
+      <strong>Luis</strong>
+      <ul>
+        <li><a href="#about" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#skills" data-i18n="skills">Tecnologías</a></li>
+        <li><a href="#projects" data-i18n="projects">Proyectos</a></li>
+        <li><a href="#highlights" data-i18n="high">Logros</a></li>
+        <li><a href="#resume" data-i18n="resume">CV</a></li>
+        <li><a href="#stats" data-i18n="stats">GitHub</a></li>
+        <li><a href="#contact" data-i18n="contact">Contacto</a></li>
+      </ul>
+      <!-- Botón idioma -->
+      <button id="lang-toggle" class="lang-btn">EN</button>
+    </nav>
 
-  <!-- ─ HERO ─ -->
-  <section id="hero">
-    <img src="https://github.com/Chakerr.png" alt="Avatar" />
-    <h1>Hi, I'm Luis! 👋</h1>
-    <p>Desarrollador de software con fuerte dominio en <b>Java, HTML, CSS y JavaScript</b>, enfocado en crear soluciones innovadoras, eficientes y escalables.</p>
-    <a href="cv.pdf" class="btn" download>
-      <i class="fa-solid fa-file-arrow-down"></i> Descargar CV
-    </a>
-  </section>
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+      <img src="https://github.com/Chakerr.png" alt="Avatar" />
+      <h1 data-i18n="hero.title">Hola, soy Luis 👋</h1>
 
-  <!-- ─ ABOUT ─ -->
-  <section id="about">
-    <h2>About me 👨‍🚀</h2>
-    <div class="card">
-      <div>
-        <p>Con enfoque en desarrollo web, busco oportunidades para aplicar mi experiencia construyendo aplicaciones robustas. Me mantengo a la vanguardia de las tecnologías emergentes y desarrollo software de alto impacto que mejora la productividad y la experiencia de usuario.</p>
-        <p>🚀✨</p>
-      </div>
-      <img src="https://media1.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Unicorn" />
-    </div>
-  </section>
+      <p data-i18n="hero.desc">
+        Desarrollador de software con fuerte dominio en
+        <b>Java, HTML, CSS y JavaScript</b>, enfocado en crear soluciones
+        innovadoras, eficientes y escalables.
+      </p>
 
-  <!-- ─ SKILLS ─ -->
-  <section id="skills">
-    <h2>Languages & Tools</h2>
-    <div class="card">
-      <img src="https://skillicons.dev/icons?i=html,js,css,angular,wordpress,androidstudio,arch,kali,linux,aws,azure,bash,powershell,bots,git,idea,java,spring,latex,maven,mysql,neovim,nodejs,postgres,postman,sqlite,sublime,vim,vscode,figma,xd,ae,ps,pr,ai&theme=light" alt="Tech stack icons" />
-    </div>
-  </section>
+      <a href="cv.pdf" class="btn" download data-i18n="hero.cv">
+        <i class="fa-solid fa-file-arrow-down"></i> Descargar CV
+      </a>
+    </section>
 
-  <!-- ─ PROJECTS ─ -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <!-- Proyecto 1 -->
-      <article class="project-card card">
-        <img src="img/project1.jpg" alt="Pet Tracker screenshot" />
-        <div class="project-content">
-          <h3>Pet Tracker (Android + Spring)</h3>
-          <p>App full-stack para coordinar paseos de mascotas con rastreo en tiempo real y notificaciones push.</p>
-          <div class="project-links">
-            <a href="https://github.com/Chakerr/Pet-Tracker" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
-            <a href="#" target="_blank">Demo</a>
-          </div>
+    <!-- ===== ABOUT ===== -->
+    <section id="about">
+      <h2 data-i18n="about.title">Sobre mí 👨‍🚀</h2>
+      <div class="card">
+        <div>
+          <p data-i18n="about.text">
+            Con enfoque en desarrollo web, busco oportunidades para aplicar mi
+            experiencia construyendo aplicaciones robustas. Me mantengo a la
+            vanguardia de las tecnologías emergentes y desarrollo software de
+            alto impacto que mejora la productividad y la experiencia de
+            usuario.
+          </p>
+          <p data-i18n="about.emoji">🚀✨</p>
         </div>
-      </article>
+        <img
+          src="https://media1.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
+          alt="Unicorn"
+        />
+      </div>
+    </section>
 
-      <!-- Proyecto 2 -->
-      <article class="project-card card">
-        <img src="img/project2.jpg" alt="Boletines screenshot" />
-        <div class="project-content">
-          <h3>Boletines Académicos (Vue 3)</h3>
-          <p>SPA que genera boletines PDF y permite a docentes marcar logros por estudiante y periodo.</p>
-          <div class="project-links">
-            <a href="https://github.com/Chakerr/Boletines-Vue" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+    <!-- ===== SKILLS ===== -->
+    <section id="skills">
+      <h2 data-i18n="skills.title">Lenguajes y herramientas</h2>
+      <div class="card">
+        <img
+          src="https://skillicons.dev/icons?i=html,js,css,angular,wordpress,androidstudio,arch,kali,linux,aws,azure,bash,powershell,bots,git,idea,java,spring,latex,maven,mysql,neovim,nodejs,postgres,postman,sqlite,sublime,vim,vscode,figma,xd,ae,ps,pr,ai&theme=light"
+          alt="Iconos de stack"
+        />
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects">
+      <h2 data-i18n="projects.title">Proyectos</h2>
+
+      <div class="projects-grid">
+        <!-- Proyecto 1 -->
+        <article class="project-card card">
+          <img src="img/project1.jpg" alt="Pet Tracker screenshot" />
+          <div class="project-content">
+            <h3 data-i18n="proj1.title">Pet Tracker (Android + Spring)</h3>
+            <p data-i18n="proj1.desc">
+              Aplicación full-stack para coordinar paseos de mascotas con
+              rastreo en tiempo real y notificaciones push.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/Chakerr/Pet-Tracker" target="_blank">
+                <i class="fa-brands fa-github"></i>
+                <span data-i18n="proj.code">Código</span>
+              </a>
+              <a href="#" target="_blank" data-i18n="proj.demo">Demo</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- Proyecto 3 -->
-      <article class="project-card card">
-        <img src="img/project3.jpg" alt="Server-Apache screenshot" />
-        <div class="project-content">
-          <h3>Server-Apache (Bash)</h3>
-          <p>Script que instala Apache2 y crea múltiples Virtual Hosts en segundos, ideal para entornos de pruebas.</p>
-          <div class="project-links">
-            <a href="https://github.com/Chakerr/Server-Apache" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+        <!-- Proyecto 2 -->
+        <article class="project-card card">
+          <img src="img/project2.jpg" alt="Boletines screenshot" />
+          <div class="project-content">
+            <h3 data-i18n="proj2.title">Boletines Académicos (Vue 3)</h3>
+            <p data-i18n="proj2.desc">
+              SPA que genera boletines PDF y permite a docentes marcar logros
+              por estudiante y periodo.
+            </p>
+            <div class="project-links">
+              <a
+                href="https://github.com/Chakerr/Boletines-Vue"
+                target="_blank"
+              >
+                <i class="fa-brands fa-github"></i>
+                <span data-i18n="proj.code">Código</span>
+              </a>
+            </div>
           </div>
+        </article>
+
+        <!-- Proyecto 3 -->
+        <article class="project-card card">
+          <img src="img/project3.jpg" alt="Server-Apache screenshot" />
+          <div class="project-content">
+            <h3 data-i18n="proj3.title">Server-Apache (Bash)</h3>
+            <p data-i18n="proj3.desc">
+              Script que instala Apache2 y crea múltiples Virtual Hosts en
+              segundos; ideal para entornos de pruebas.
+            </p>
+            <div class="project-links">
+              <a
+                href="https://github.com/Chakerr/Server-Apache"
+                target="_blank"
+              >
+                <i class="fa-brands fa-github"></i>
+                <span data-i18n="proj.code">Código</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== HIGHLIGHTS ===== -->
+    <section id="highlights">
+      <h2 data-i18n="high.title">Logros de impacto</h2>
+      <div class="highlights-grid">
+        <div class="card hi-box">
+          <h3>5+</h3>
+          <p data-i18n="high1">Microservicios en producción</p>
         </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ─ HIGHLIGHTS ─ -->
-  <section id="highlights">
-    <h2>Impact Highlights</h2>
-    <div class="highlights-grid">
-      <div class="card hi-box"><h3>5+</h3><p>Microservicios en producción</p></div>
-      <div class="card hi-box"><h3>99.9 %</h3><p>Uptime sostenido 12 m</p></div>
-      <div class="card hi-box"><h3>40 %</h3><p>Reducción de latencia API</p></div>
-      <div class="card hi-box"><h3>25 %</h3><p>Aumento cobertura tests</p></div>
-    </div>
-  </section>
-
-  <!-- ─ RESUME ─ -->
-  <section id="resume">
-    <h2>Experience & Education</h2>
-    <div class="timeline">
-      <div class="tl-item card">
-        <h3>Backend Developer · EXA Software</h3>
-        <span class="tl-date">2024 – Present · Bogotá</span>
-        <p>Diseño de APIs REST, microservicios Spring Cloud y despliegues CI/CD en AWS.</p>
+        <div class="card hi-box">
+          <h3>99.9 %</h3>
+          <p data-i18n="high2">Uptime sostenido 12 m</p>
+        </div>
+        <div class="card hi-box">
+          <h3>40 %</h3>
+          <p data-i18n="high3">Reducción de latencia API</p>
+        </div>
+        <div class="card hi-box">
+          <h3>25 %</h3>
+          <p data-i18n="high4">Aumento cobertura tests</p>
+        </div>
       </div>
-      <div class="tl-item card">
-        <h3>Freelance Full-Stack Developer</h3>
-        <span class="tl-date">2022 – 2024 · Remoto</span>
-        <p>eCommerce (Vue + Node) y automatizaciones Bash/Ansible para pymes.</p>
+    </section>
+
+    <!-- ===== RESUME ===== -->
+    <section id="resume">
+      <h2 data-i18n="resume.title">Experiencia y educación</h2>
+      <div class="timeline">
+        <div class="tl-item card">
+          <h3 data-i18n="res1.title">Backend Developer · EXA Software</h3>
+          <span class="tl-date" data-i18n="res1.date"
+            >2024 – Presente · Bogotá</span
+          >
+          <p data-i18n="res1.desc">
+            Diseño de APIs REST, microservicios Spring Cloud y despliegues CI/CD
+            en AWS.
+          </p>
+        </div>
+
+        <div class="tl-item card">
+          <h3 data-i18n="res2.title">Freelance Full-Stack Developer</h3>
+          <span class="tl-date" data-i18n="res2.date"
+            >2022 – 2024 · Remoto</span
+          >
+          <p data-i18n="res2.desc">
+            eCommerce (Vue + Node) y automatizaciones Bash/Ansible para pymes.
+          </p>
+        </div>
+
+        <div class="tl-item card">
+          <h3 data-i18n="res3.title">Ing. de Sistemas (B.Sc.)</h3>
+          <span class="tl-date" data-i18n="res3.date"
+            >2020 – 2024 · Univ. XYZ</span
+          >
+          <p data-i18n="res3.desc">
+            Graduado con enfoque en software y ciberseguridad; honores
+            académicos.
+          </p>
+        </div>
       </div>
-      <div class="tl-item card">
-        <h3>B.Sc. Ingeniería de Sistemas</h3>
-        <span class="tl-date">2020 – 2024 · Univ. XYZ</span>
-        <p>Enfoque en software y ciberseguridad. Graduado con honores.</p>
+    </section>
+
+    <!-- ===== CERTS ===== -->
+    <section id="certs">
+      <h2 data-i18n="certs.title">Certificaciones & Premios</h2>
+      <div class="tile-grid">
+        <article class="card tile">
+          <h3 data-i18n="cert1">AWS Certified Cloud Practitioner</h3>
+          <span>2025</span>
+        </article>
+        <article class="card tile">
+          <h3 data-i18n="cert2">Google Cloud Fundamentals</h3>
+          <span>2024</span>
+        </article>
+        <article class="card tile">
+          <h3 data-i18n="cert3">Ganador · Uni Hackathon</h3>
+          <span>2023</span>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ─ CERTIFICATIONS ─ -->
-  <section id="certs">
-    <h2>Certifications & Awards</h2>
-    <div class="tile-grid">
-      <article class="card tile"><h3>AWS Certified Cloud Practitioner</h3><span>2025</span></article>
-      <article class="card tile"><h3>Google Cloud Fundamentals</h3><span>2024</span></article>
-      <article class="card tile"><h3>Winner · Uni Hackathon</h3><span>2023</span></article>
-    </div>
-  </section>
+    <!-- ===== OSS ===== -->
+    <section id="oss">
+      <h2 data-i18n="oss.title">Open-Source & Comunidad</h2>
+      <div class="tile-grid">
+        <article class="card tile">
+          <h3 data-i18n="oss1.title">Contribuidor Spring Boot</h3>
+          <p data-i18n="oss1.desc">3 PRs aceptados (module-path)</p>
+        </article>
+        <article class="card tile">
+          <h3 data-i18n="oss2.title">Blogger @ Dev.to</h3>
+          <p data-i18n="oss2.desc">Guías Kotlin + JPA (4 k lecturas)</p>
+        </article>
+        <article class="card tile">
+          <h3 data-i18n="oss3.title">Mentor voluntario</h3>
+          <p data-i18n="oss3.desc">Programa Tech4Good LATAM</p>
+        </article>
+      </div>
+    </section>
 
-  <!-- ─ OPEN SOURCE ─ -->
-  <section id="oss">
-    <h2>Open-Source & Community</h2>
-    <div class="tile-grid">
-      <article class="card tile"><h3>Contribuidor Spring Boot</h3><p>3 PRs aceptados (module-path)</p></article>
-      <article class="card tile"><h3>Blogger @ Dev.to</h3><p>Guías Kotlin + JPA (4 k lecturas)</p></article>
-      <article class="card tile"><h3>Mentor voluntario</h3><p>Programa Tech4Good LATAM</p></article>
-    </div>
-  </section>
+    <!-- ===== SOFT SKILLS ===== -->
+    <section id="soft">
+      <h2 data-i18n="soft.title">Habilidades blandas</h2>
+      <ul class="soft-list card">
+        <li>
+          <i class="fa-solid fa-comments"></i>
+          <span data-i18n="soft1">Comunicación con stakeholders</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-people-group"></i>
+          <span data-i18n="soft2">Liderazgo de equipo ágil</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-user-graduate"></i>
+          <span data-i18n="soft3">Mentoría a juniors</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-lightbulb"></i>
+          <span data-i18n="soft4">Pensamiento crítico</span>
+        </li>
+      </ul>
+    </section>
 
-  <!-- ─ SOFT SKILLS ─ -->
-  <section id="soft">
-    <h2>Soft Skills</h2>
-    <ul class="soft-list card">
-      <li><i class="fa-solid fa-comments"></i> Comunicación con stakeholders</li>
-      <li><i class="fa-solid fa-people-group"></i> Liderazgo de equipo ágil</li>
-      <li><i class="fa-solid fa-user-graduate"></i> Mentoría a juniors</li>
-      <li><i class="fa-solid fa-lightbulb"></i> Pensamiento crítico</li>
-    </ul>
-  </section>
+    <!-- ===== LANGUAGES ===== -->
+    <section id="languages">
+      <h2 data-i18n="langsec.title">Idiomas</h2>
+      <div class="lang-grid card">
+        <div data-i18n="lang1"><strong>Español</strong> — Nativo</div>
+        <div data-i18n="lang2"><strong>Inglés</strong> — B2</div>
+        <div data-i18n="lang3"><strong>Portugués</strong> — A2</div>
+      </div>
+    </section>
 
-  <!-- ─ LANGUAGES ─ -->
-  <section id="languages">
-    <h2>Languages</h2>
-    <div class="lang-grid card">
-      <div><strong>Español</strong> — Native</div>
-      <div><strong>English</strong> — B2</div>
-      <div><strong>Português</strong> — A2</div>
-    </div>
-  </section>
+    <!-- ===== GITHUB STATS ===== -->
+    <section id="stats">
+      <h2 data-i18n="stats.title">Estadísticas GitHub</h2>
+      <div class="stats">
+        <img
+          src="https://github-readme-stats.vercel.app/api/top-langs/?username=Chakerr&theme=nord&show_icons=true&hide_border=true&layout=compact"
+          alt="Top languages"
+          class="card"
+        />
+        <img
+          src="https://github-readme-stats.vercel.app/api?username=Chakerr&theme=nord&show_icons=true&hide_border=true&count_private=false"
+          alt="GitHub stats"
+          class="card"
+        />
+      </div>
+    </section>
 
-  <!-- ─ GITHUB STATS ─ -->
-  <section id="stats">
-    <h2>GitHub Stats</h2>
-    <div class="stats">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Chakerr&theme=nord&show_icons=true&hide_border=true&layout=compact" alt="Top languages" class="card" />
-      <img src="https://github-readme-stats.vercel.app/api?username=Chakerr&theme=nord&show_icons=true&hide_border=true&count_private=false" alt="Stats" class="card" />
-    </div>
-  </section>
+    <!-- ===== NOW ===== -->
+    <section id="now">
+      <h2 data-i18n="now.title">En qué trabajo ahora</h2>
+      <div class="card now-box">
+        <p data-i18n="now.desc">
+          🔬 Desplegando módulo de <strong>ML</strong> en AWS SageMaker para
+          <em>Pet Tracker</em>.<br />
+          ✨ Explorando <strong>Rust + WASM</strong> para acelerar procesamiento
+          de imágenes.
+        </p>
+      </div>
+    </section>
 
-  <!-- ─ NOW ─ -->
-  <section id="now">
-    <h2>What I'm Working on Now</h2>
-    <div class="card now-box">
-      <p>🔬 Desplegando módulo de <strong>ML</strong> en AWS SageMaker para <em>Pet Tracker</em>.<br/>✨ Explorando <strong>Rust + WASM</strong> para acelerar procesamiento de imágenes.</p>
-    </div>
-  </section>
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+      <h2 data-i18n="contact.title">Conecta conmigo 🚀</h2>
+      <div class="card icons">
+        <a
+          href="https://discordapp.com/users/593146083530637360"
+          target="_blank"
+          ><img
+            src="https://skillicons.dev/icons?i=discord&theme=light"
+            alt="Discord"
+        /></a>
+        <a href="https://github.com/Chakerr" target="_blank"
+          ><img
+            src="https://skillicons.dev/icons?i=github&theme=light"
+            alt="GitHub"
+        /></a>
+        <a href="mailto:luisgas012@gmail.com"
+          ><img
+            src="https://skillicons.dev/icons?i=gmail&theme=light"
+            alt="Gmail"
+        /></a>
+        <a href="https://www.instagram.com/chakerr_z/" target="_blank"
+          ><img
+            src="https://skillicons.dev/icons?i=instagram&theme=light"
+            alt="Instagram"
+        /></a>
+        <a
+          href="https://www.linkedin.com/in/luis-gabriel-romero-castro-11a948268/"
+          target="_blank"
+          ><img
+            src="https://skillicons.dev/icons?i=linkedin&theme=light"
+            alt="LinkedIn"
+        /></a>
+      </div>
+    </section>
 
-  <!-- ─ CONTACT ─ -->
-  <section id="contact">
-    <h2>Connect with me 🚀</h2>
-    <div class="card icons">
-      <a href="https://discordapp.com/users/593146083530637360" target="_blank"><img src="https://skillicons.dev/icons?i=discord&theme=light" alt="Discord" /></a>
-      <a href="https://github.com/Chakerr" target="_blank"><img src="https://skillicons.dev/icons?i=github&theme=light" alt="GitHub" /></a>
-      <a href="mailto:luisgas012@gmail.com"><img src="https://skillicons.dev/icons?i=gmail&theme=light" alt="Gmail" /></a>
-      <a href="https://www.instagram.com/chakerr_z/" target="_blank"><img src="https://skillicons.dev/icons?i=instagram&theme=light" alt="Instagram" /></a>
-      <a href="https://www.linkedin.com/in/luis-gabriel-romero-castro-11a948268/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin&theme=light" alt="LinkedIn" /></a>
-    </div>
-  </section>
+    <footer>
+      © <span id="y"></span> Luis Gabriel Romero Castro —
+      <span data-i18n="footer.made">Creado con 💙</span>
+    </footer>
 
-  <footer>
-    © <span id="y"></span> Luis Gabriel Romero Castro • Crafted with 💙
-  </footer>
-
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</body>
+    <!-- Scripts -->
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+    <script src="translate.js"></script>
+  </body>
 </html>
