@@ -1,0 +1,183 @@
+/* ────────────────────────────────
+   Estilos básicos (incluidos en la misma página
+   para facilitar la entrega en un solo archivo).
+   Si prefieres, mueve todo esto a styles.css.
+──────────────────────────────────── */
+:root {
+    --primary: #2264e5;
+    --secondary: #ffb84d;
+    --bg: #f9fafb;
+    --text: #1f2937;
+    --card: #ffffff;
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+        }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        h1, h2, h3 {
+            font-weight: 800;
+            margin-bottom: 0.4em;
+        }
+        h2 {
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            letter-spacing: 0.05em;
+        }
+        /* ─── Layout básico ─────────────────────────── */
+        header,
+        section,
+        footer {
+            width: 90%;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+        /* ─── CABECERA (foto + nombre + descripción)─── */
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .profile img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            margin-bottom: 1rem;
+        }
+        .profile h1 {
+            font-size: 2rem;
+        }
+        .profile p {
+            max-width: 600px;
+            margin-top: 0.6rem;
+        }
+        /* ─── Habilidades (grid) ────────────────────── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .skill-chip {
+            background: var(--card);
+            padding: 0.75rem 1rem;
+            border-radius: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+        }
+        /* ─── Proyectos (tarjetas) ──────────────────── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .project-card {
+            background: var(--card);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        .project-card .content {
+            padding: 1rem 1.25rem 1.5rem;
+            flex: 1;
+        }
+        .project-card h3 {
+            font-size: 1.2rem;
+        }
+        .project-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.75rem;
+        }
+        .project-links a {
+            font-size: 0.9rem;
+            background: var(--primary);
+            color: #fff;
+            padding: 0.45rem 0.8rem;
+            border-radius: 0.5rem;
+            transition: background 0.2s ease;
+        }
+        .project-links a:hover {
+            background: #1149b4;
+        }
+        /* ─── Timeline (experiencia/educación)───────── */
+        .timeline {
+            margin-top: 1.5rem;
+            border-left: 3px solid var(--primary);
+        }
+        .timeline-item {
+            margin-left: 1.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -1.28rem;
+            top: 0.15rem;
+            background: var(--primary);
+            width: 0.85rem;
+            height: 0.85rem;
+            border-radius: 50%;
+        }
+        .timeline-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        .timeline-item span {
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+        .timeline-item p {
+            margin: 0.5rem 0 1rem;
+        }
+        /* ─── Contacto ──────────────────────────────── */
+        .contact {
+            text-align: center;
+        }
+        .contact a.btn {
+            display: inline-block;
+            margin-top: 0.8rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--secondary);
+            border-radius: 0.6rem;
+            font-weight: 600;
+            color: #000;
+            transition: filter 0.2s ease;
+        }
+        .contact a.btn:hover {
+            filter: brightness(0.9);
+        }
+        /* ─── Footer ────────────────────────────────── */
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6b7280;
+            padding-bottom: 2rem;
+        }
