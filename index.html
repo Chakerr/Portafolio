@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ────────────────────────────────
+         Título y metadatos básicos
+    ──────────────────────────────────── -->
+    <title>Portafolio | Tu Nombre</title>
+    <meta name="description" content="Portafolio y hoja de vida de Tu Nombre, desarrollador de software." />
+
+    <!-- ────────────────────────────────
+         Fuentes & iconos (Google Fonts + FontAwesome CDN)
+    ──────────────────────────────────── -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-REPLACE_WITH_HASH" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ────────────────────────────────
+         Estilos básicos (incluidos en la misma página
+         para facilitar la entrega en un solo archivo).
+         Si prefieres, mueve todo esto a styles.css.
+    ──────────────────────────────────── -->
+    <style>
+        :root {
+            --primary: #2264e5;
+            --secondary: #ffb84d;
+            --bg: #f9fafb;
+            --text: #1f2937;
+            --card: #ffffff;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+        }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        h1, h2, h3 {
+            font-weight: 800;
+            margin-bottom: 0.4em;
+        }
+        h2 {
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            letter-spacing: 0.05em;
+        }
+        /* ─── Layout básico ─────────────────────────── */
+        header,
+        section,
+        footer {
+            width: 90%;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+        /* ─── CABECERA (foto + nombre + descripción)─── */
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .profile img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            margin-bottom: 1rem;
+        }
+        .profile h1 {
+            font-size: 2rem;
+        }
+        .profile p {
+            max-width: 600px;
+            margin-top: 0.6rem;
+        }
+        /* ─── Habilidades (grid) ────────────────────── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .skill-chip {
+            background: var(--card);
+            padding: 0.75rem 1rem;
+            border-radius: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+        }
+        /* ─── Proyectos (tarjetas) ──────────────────── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .project-card {
+            background: var(--card);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        .project-card .content {
+            padding: 1rem 1.25rem 1.5rem;
+            flex: 1;
+        }
+        .project-card h3 {
+            font-size: 1.2rem;
+        }
+        .project-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.75rem;
+        }
+        .project-links a {
+            font-size: 0.9rem;
+            background: var(--primary);
+            color: #fff;
+            padding: 0.45rem 0.8rem;
+            border-radius: 0.5rem;
+            transition: background 0.2s ease;
+        }
+        .project-links a:hover {
+            background: #1149b4;
+        }
+        /* ─── Timeline (experiencia/educación)───────── */
+        .timeline {
+            margin-top: 1.5rem;
+            border-left: 3px solid var(--primary);
+        }
+        .timeline-item {
+            margin-left: 1.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -1.28rem;
+            top: 0.15rem;
+            background: var(--primary);
+            width: 0.85rem;
+            height: 0.85rem;
+            border-radius: 50%;
+        }
+        .timeline-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        .timeline-item span {
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+        .timeline-item p {
+            margin: 0.5rem 0 1rem;
+        }
+        /* ─── Contacto ──────────────────────────────── */
+        .contact {
+            text-align: center;
+        }
+        .contact a.btn {
+            display: inline-block;
+            margin-top: 0.8rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--secondary);
+            border-radius: 0.6rem;
+            font-weight: 600;
+            color: #000;
+            transition: filter 0.2s ease;
+        }
+        .contact a.btn:hover {
+            filter: brightness(0.9);
+        }
+        /* ─── Footer ────────────────────────────────── */
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6b7280;
+            padding-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ╭──────────────────────────────────────────╮
+         │  1. HERO / CABECERA                     │
+         ╰──────────────────────────────────────────╯ -->
+    <header class="profile">
+        <!-- Foto de perfil (160×160) -->
+        <img src="img/profile.jpg" alt="Foto de Tu Nombre" />
+
+        <!-- Nombre -->
+        <h1>Tu Nombre</h1>
+
+        <!-- Descripción breve -->
+        <p>
+            Desarrollador de software especializado en <strong>Java</strong> y <strong>Spring Boot</strong>,
+            apasionado por <em>backend</em> y soluciones escalables. Busco crear productos
+            robustos y de alto impacto que mejoren la vida de las personas.
+        </p>
+
+        <!-- Botón - Descarga del CV en PDF -->
+        <a href="cv.pdf" class="btn" style="margin-top:1.2rem" download>
+            <i class="fa-solid fa-file-arrow-down"></i> Descargar CV
+        </a>
+    </header>
+
+    <!-- ╭──────────────────────────────────────────╮
+         │  2. HABILIDADES                        │
+         ╰──────────────────────────────────────────╯ -->
+    <section id="skills">
+        <h2>Habilidades</h2>
+        <div class="skills-grid">
+            <!-- Cada chip representa una habilidad -->
+            <div class="skill-chip"><i class="fa-brands fa-java"></i> Java 17</div>
+            <div class="skill-chip"><i class="fa-brands fa-js"></i> JavaScript</div>
+            <div class="skill-chip"><i class="fa-brands fa-python"></i> Python</div>
+            <div class="skill-chip"><i class="fa-solid fa-database"></i> PostgreSQL</div>
+            <div class="skill-chip"><i class="fa-brands fa-aws"></i> AWS</div>
+            <div class="skill-chip"><i class="fa-solid fa-shield-halved"></i> Seguridad App</div>
+            <!-- …duplica/elimina lo que necesites -->
+        </div>
+    </section>
+
+    <!-- ╭──────────────────────────────────────────╮
+         │  3. PROYECTOS                          │
+         ╰──────────────────────────────────────────╯ -->
+    <section id="projects">
+        <h2>Proyectos</h2>
+
+        <div class="projects-grid">
+
+            <!-- Proyecto 1 -->
+            <article class="project-card">
+                <!-- Miniatura o captura -->
+                <img src="img/proyecto1.jpg" alt="Captura de Proyecto 1" />
+                <div class="content">
+                    <h3>Sistema de Gestión de Mascotas</h3>
+                    <p>Aplicación <em>full-stack</em> (Spring Boot + Android) que permite a paseadores y dueños
+                       coordinar recorridos y monitorear rutas en tiempo real.</p>
+
+                    <!-- Enlaces útiles -->
+                    <div class="project-links">
+                        <a href="https://github.com/tuusuario/pet-tracker" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i> Código
+                        </a>
+                        <a href="https://pet-tracker-demo.vercel.app" target="_blank" rel="noopener">
+                            Demo
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Proyecto 2 -->
+            <article class="project-card">
+                <img src="img/proyecto2.jpg" alt="Captura de Proyecto 2" />
+                <div class="content">
+                    <h3>Plataforma de Boletines Académicos</h3>
+                    <p>SPA en Vue 3 + Pinia para gestionar logros estudiantiles con generación
+                       de PDF y vistas responsivas para docentes y padres.</p>
+
+                    <div class="project-links">
+                        <a href="https://github.com/tuusuario/boletines-vue" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i> Código
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Copia y ajusta estructuras similares
+                 para añadir más proyectos -->
+        </div>
+    </section>
+
+    <!-- ╭──────────────────────────────────────────╮
+         │  4. EXPERIENCIA & EDUCACIÓN            │
+         ╰──────────────────────────────────────────╯ -->
+    <section id="timeline">
+        <h2>Experiencia & Educación</h2>
+        <div class="timeline">
+            <!-- Item 1 -->
+            <div class="timeline-item">
+                <h3>Desarrollador Backend – EXA Software</h3>
+                <span>2024 – Presente</span>
+                <p>Diseño de APIs REST, microservicios con Spring Cloud y despliegue en AWS.</p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="timeline-item">
+                <h3>Ingeniería de Sistemas – Universidad XYZ</h3>
+                <span>2020 – 2024</span>
+                <p>Graduado con honores, enfoque en ingeniería de software y ciberseguridad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ╭──────────────────────────────────────────╮
+         │  5. CONTACTO                           │
+         ╰──────────────────────────────────────────╯ -->
+    <section id="contact" class="contact">
+        <h2>Contacto</h2>
+        <p>
+            ¿Un proyecto interesante? <br />
+            Escríbeme a <a href="mailto:tu.email@dominio.com">tu.email@dominio.com</a> o conéctate en
+            <a href="https://www.linkedin.com/in/tuusuario/" target="_blank" rel="noopener">LinkedIn</a>.
+        </p>
+        <a href="mailto:tu.email@dominio.com" class="btn">
+            <i class="fa-solid fa-paper-plane"></i> Enviar correo
+        </a>
+    </section>
+
+    <!-- ╭──────────────────────────────────────────╮
+         │  6. FOOTER                             │
+         ╰──────────────────────────────────────────╯ -->
+    <footer>
+        © <span id="year"></span> Tu Nombre • Desarrollado con 💙 en HTML & CSS
+    </footer>
+
+    <!-- ────────────────────────────────
+         JavaScript mínimo para el año
+    ──────────────────────────────────── -->
+    <script>
+        // Actualiza el año automáticamente
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
