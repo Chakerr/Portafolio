@@ -1,163 +1,219 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ────────────────────────────────
-         Título y metadatos básicos
-    ──────────────────────────────────── -->
-    <title>Portafolio | Tu Nombre</title>
-    <meta name="description" content="Portafolio y hoja de vida de Tu Nombre, desarrollador de software." />
+  <title>Luis Romero • Developer Portfolio</title>
 
-    <!-- ────────────────────────────────
-         Fuentes & iconos (Google Fonts + FontAwesome CDN)
-    ──────────────────────────────────── -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-REPLACE_WITH_HASH" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Fira+Code&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome icons -->
+  <script src="https://kit.fontawesome.com/a9e2a5ad1d.js" crossorigin="anonymous"></script>
+
+  <!-- Hoja de estilos externa -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
 <body>
+  <!-- ─ blobs decorativos ─ -->
+  <span class="blob one"></span>
+  <span class="blob two"></span>
 
-    <!-- ╭──────────────────────────────────────────╮
-         │  1. HERO / CABECERA                     │
-         ╰──────────────────────────────────────────╯ -->
-    <header class="profile">
-        <!-- Foto de perfil (160×160) -->
-        <img src="/img/Profile.png" alt="profile" />
+  <!-- ─ NAVBAR ─ -->
+  <nav>
+    <strong>Luis</strong>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#highlights">Highlights</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#stats">Stats</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-        <!-- Nombre -->
-        <h1>Luis Gabriel Romero Castro</h1>
+  <!-- ─ HERO ─ -->
+  <section id="hero">
+    <img src="https://github.com/Chakerr.png" alt="Avatar" />
+    <h1>Hi, I'm Luis! 👋</h1>
+    <p>Desarrollador de software con fuerte dominio en <b>Java, HTML, CSS y JavaScript</b>, enfocado en crear soluciones innovadoras, eficientes y escalables.</p>
+    <a href="cv.pdf" class="btn" download>
+      <i class="fa-solid fa-file-arrow-down"></i> Descargar CV
+    </a>
+  </section>
 
-        <!-- Descripción breve -->
-        <p>
-            Desarrollador de software especializado en <strong>Java</strong> y <strong>Spring Boot</strong>,
-            apasionado por <em>backend</em> y soluciones escalables. Busco crear productos
-            robustos y de alto impacto que mejoren la vida de las personas.
-        </p>
+  <!-- ─ ABOUT ─ -->
+  <section id="about">
+    <h2>About me 👨‍🚀</h2>
+    <div class="card">
+      <div>
+        <p>Con enfoque en desarrollo web, busco oportunidades para aplicar mi experiencia construyendo aplicaciones robustas. Me mantengo a la vanguardia de las tecnologías emergentes y desarrollo software de alto impacto que mejora la productividad y la experiencia de usuario.</p>
+        <p>🚀✨</p>
+      </div>
+      <img src="https://media1.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Unicorn" />
+    </div>
+  </section>
 
-        <!-- Botón - Descarga del CV en PDF -->
-        <a href="cv.pdf" class="btn" style="margin-top:1.2rem" download>
-            <i class="fa-solid fa-file-arrow-down"></i> Descargar CV
-        </a>
-    </header>
+  <!-- ─ SKILLS ─ -->
+  <section id="skills">
+    <h2>Languages & Tools</h2>
+    <div class="card">
+      <img src="https://skillicons.dev/icons?i=html,js,css,angular,wordpress,androidstudio,arch,kali,linux,aws,azure,bash,powershell,bots,git,idea,java,spring,latex,maven,mysql,neovim,nodejs,postgres,postman,sqlite,sublime,vim,vscode,figma,xd,ae,ps,pr,ai&theme=light" alt="Tech stack icons" />
+    </div>
+  </section>
 
-    <!-- ╭──────────────────────────────────────────╮
-         │  2. HABILIDADES                        │
-         ╰──────────────────────────────────────────╯ -->
-    <section id="skills">
-        <h2>Habilidades</h2>
-        <div class="skills-grid">
-            <!-- Cada chip representa una habilidad -->
-            <div class="skill-chip"><i class="fa-brands fa-java"></i> Java 17</div>
-            <div class="skill-chip"><i class="fa-brands fa-js"></i> JavaScript</div>
-            <div class="skill-chip"><i class="fa-brands fa-python"></i> Python</div>
-            <div class="skill-chip"><i class="fa-solid fa-database"></i> PostgreSQL</div>
-            <div class="skill-chip"><i class="fa-brands fa-aws"></i> AWS</div>
-            <div class="skill-chip"><i class="fa-solid fa-shield-halved"></i> Seguridad App</div>
-            <!-- …duplica/elimina lo que necesites -->
+  <!-- ─ PROJECTS ─ -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <!-- Proyecto 1 -->
+      <article class="project-card card">
+        <img src="img/project1.jpg" alt="Pet Tracker screenshot" />
+        <div class="project-content">
+          <h3>Pet Tracker (Android + Spring)</h3>
+          <p>App full-stack para coordinar paseos de mascotas con rastreo en tiempo real y notificaciones push.</p>
+          <div class="project-links">
+            <a href="https://github.com/Chakerr/Pet-Tracker" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+            <a href="#" target="_blank">Demo</a>
+          </div>
         </div>
-    </section>
+      </article>
 
-    <!-- ╭──────────────────────────────────────────╮
-         │  3. PROYECTOS                          │
-         ╰──────────────────────────────────────────╯ -->
-    <section id="projects">
-        <h2>Proyectos</h2>
-
-        <div class="projects-grid">
-
-            <!-- Proyecto 1 -->
-            <article class="project-card">
-                <!-- Miniatura o captura -->
-                <img src="img/proyecto1.jpg" alt="Captura de Proyecto 1" />
-                <div class="content">
-                    <h3>Sistema de Gestión de Mascotas</h3>
-                    <p>Aplicación <em>full-stack</em> (Spring Boot + Android) que permite a paseadores y dueños
-                       coordinar recorridos y monitorear rutas en tiempo real.</p>
-
-                    <!-- Enlaces útiles -->
-                    <div class="project-links">
-                        <a href="https://github.com/tuusuario/pet-tracker" target="_blank" rel="noopener">
-                            <i class="fa-brands fa-github"></i> Código
-                        </a>
-                        <a href="https://pet-tracker-demo.vercel.app" target="_blank" rel="noopener">
-                            Demo
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Proyecto 2 -->
-            <article class="project-card">
-                <img src="img/proyecto2.jpg" alt="Captura de Proyecto 2" />
-                <div class="content">
-                    <h3>Plataforma de Boletines Académicos</h3>
-                    <p>SPA en Vue 3 + Pinia para gestionar logros estudiantiles con generación
-                       de PDF y vistas responsivas para docentes y padres.</p>
-
-                    <div class="project-links">
-                        <a href="https://github.com/tuusuario/boletines-vue" target="_blank" rel="noopener">
-                            <i class="fa-brands fa-github"></i> Código
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Copia y ajusta estructuras similares
-                 para añadir más proyectos -->
+      <!-- Proyecto 2 -->
+      <article class="project-card card">
+        <img src="img/project2.jpg" alt="Boletines screenshot" />
+        <div class="project-content">
+          <h3>Boletines Académicos (Vue 3)</h3>
+          <p>SPA que genera boletines PDF y permite a docentes marcar logros por estudiante y periodo.</p>
+          <div class="project-links">
+            <a href="https://github.com/Chakerr/Boletines-Vue" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
         </div>
-    </section>
+      </article>
 
-    <!-- ╭──────────────────────────────────────────╮
-         │  4. EXPERIENCIA & EDUCACIÓN            │
-         ╰──────────────────────────────────────────╯ -->
-    <section id="timeline">
-        <h2>Experiencia & Educación</h2>
-        <div class="timeline">
-            <!-- Item 1 -->
-            <div class="timeline-item">
-                <h3>Desarrollador Backend – EXA Software</h3>
-                <span>2024 – Presente</span>
-                <p>Diseño de APIs REST, microservicios con Spring Cloud y despliegue en AWS.</p>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="timeline-item">
-                <h3>Ingeniería de Sistemas – Universidad XYZ</h3>
-                <span>2020 – 2024</span>
-                <p>Graduado con honores, enfoque en ingeniería de software y ciberseguridad.</p>
-            </div>
+      <!-- Proyecto 3 -->
+      <article class="project-card card">
+        <img src="img/project3.jpg" alt="Server-Apache screenshot" />
+        <div class="project-content">
+          <h3>Server-Apache (Bash)</h3>
+          <p>Script que instala Apache2 y crea múltiples Virtual Hosts en segundos, ideal para entornos de pruebas.</p>
+          <div class="project-links">
+            <a href="https://github.com/Chakerr/Server-Apache" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
         </div>
-    </section>
+      </article>
+    </div>
+  </section>
 
-    <!-- ╭──────────────────────────────────────────╮
-         │  5. CONTACTO                           │
-         ╰──────────────────────────────────────────╯ -->
-    <section id="contact" class="contact">
-        <h2>Contacto</h2>
-        <p>
-            ¿Un proyecto interesante? <br />
-            Escríbeme a <a href="mailto:tu.email@dominio.com">tu.email@dominio.com</a> o conéctate en
-            <a href="https://www.linkedin.com/in/tuusuario/" target="_blank" rel="noopener">LinkedIn</a>.
-        </p>
-        <a href="mailto:tu.email@dominio.com" class="btn">
-            <i class="fa-solid fa-paper-plane"></i> Enviar correo
-        </a>
-    </section>
+  <!-- ─ HIGHLIGHTS ─ -->
+  <section id="highlights">
+    <h2>Impact Highlights</h2>
+    <div class="highlights-grid">
+      <div class="card hi-box"><h3>5+</h3><p>Microservicios en producción</p></div>
+      <div class="card hi-box"><h3>99.9 %</h3><p>Uptime sostenido 12 m</p></div>
+      <div class="card hi-box"><h3>40 %</h3><p>Reducción de latencia API</p></div>
+      <div class="card hi-box"><h3>25 %</h3><p>Aumento cobertura tests</p></div>
+    </div>
+  </section>
 
-    <!-- ╭──────────────────────────────────────────╮
-         │  6. FOOTER                             │
-         ╰──────────────────────────────────────────╯ -->
-    <footer>
-        © <span id="year"></span> Tu Nombre • Desarrollado con 💙 en HTML & CSS
-    </footer>
+  <!-- ─ RESUME ─ -->
+  <section id="resume">
+    <h2>Experience & Education</h2>
+    <div class="timeline">
+      <div class="tl-item card">
+        <h3>Backend Developer · EXA Software</h3>
+        <span class="tl-date">2024 – Present · Bogotá</span>
+        <p>Diseño de APIs REST, microservicios Spring Cloud y despliegues CI/CD en AWS.</p>
+      </div>
+      <div class="tl-item card">
+        <h3>Freelance Full-Stack Developer</h3>
+        <span class="tl-date">2022 – 2024 · Remoto</span>
+        <p>eCommerce (Vue + Node) y automatizaciones Bash/Ansible para pymes.</p>
+      </div>
+      <div class="tl-item card">
+        <h3>B.Sc. Ingeniería de Sistemas</h3>
+        <span class="tl-date">2020 – 2024 · Univ. XYZ</span>
+        <p>Enfoque en software y ciberseguridad. Graduado con honores.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- ────────────────────────────────
-         JavaScript mínimo para el año
-    ──────────────────────────────────── -->
-    <script>
-        // Actualiza el año automáticamente
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+  <!-- ─ CERTIFICATIONS ─ -->
+  <section id="certs">
+    <h2>Certifications & Awards</h2>
+    <div class="tile-grid">
+      <article class="card tile"><h3>AWS Certified Cloud Practitioner</h3><span>2025</span></article>
+      <article class="card tile"><h3>Google Cloud Fundamentals</h3><span>2024</span></article>
+      <article class="card tile"><h3>Winner · Uni Hackathon</h3><span>2023</span></article>
+    </div>
+  </section>
+
+  <!-- ─ OPEN SOURCE ─ -->
+  <section id="oss">
+    <h2>Open-Source & Community</h2>
+    <div class="tile-grid">
+      <article class="card tile"><h3>Contribuidor Spring Boot</h3><p>3 PRs aceptados (module-path)</p></article>
+      <article class="card tile"><h3>Blogger @ Dev.to</h3><p>Guías Kotlin + JPA (4 k lecturas)</p></article>
+      <article class="card tile"><h3>Mentor voluntario</h3><p>Programa Tech4Good LATAM</p></article>
+    </div>
+  </section>
+
+  <!-- ─ SOFT SKILLS ─ -->
+  <section id="soft">
+    <h2>Soft Skills</h2>
+    <ul class="soft-list card">
+      <li><i class="fa-solid fa-comments"></i> Comunicación con stakeholders</li>
+      <li><i class="fa-solid fa-people-group"></i> Liderazgo de equipo ágil</li>
+      <li><i class="fa-solid fa-user-graduate"></i> Mentoría a juniors</li>
+      <li><i class="fa-solid fa-lightbulb"></i> Pensamiento crítico</li>
+    </ul>
+  </section>
+
+  <!-- ─ LANGUAGES ─ -->
+  <section id="languages">
+    <h2>Languages</h2>
+    <div class="lang-grid card">
+      <div><strong>Español</strong> — Native</div>
+      <div><strong>English</strong> — B2</div>
+      <div><strong>Português</strong> — A2</div>
+    </div>
+  </section>
+
+  <!-- ─ GITHUB STATS ─ -->
+  <section id="stats">
+    <h2>GitHub Stats</h2>
+    <div class="stats">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Chakerr&theme=nord&show_icons=true&hide_border=true&layout=compact" alt="Top languages" class="card" />
+      <img src="https://github-readme-stats.vercel.app/api?username=Chakerr&theme=nord&show_icons=true&hide_border=true&count_private=false" alt="Stats" class="card" />
+    </div>
+  </section>
+
+  <!-- ─ NOW ─ -->
+  <section id="now">
+    <h2>What I'm Working on Now</h2>
+    <div class="card now-box">
+      <p>🔬 Desplegando módulo de <strong>ML</strong> en AWS SageMaker para <em>Pet Tracker</em>.<br/>✨ Explorando <strong>Rust + WASM</strong> para acelerar procesamiento de imágenes.</p>
+    </div>
+  </section>
+
+  <!-- ─ CONTACT ─ -->
+  <section id="contact">
+    <h2>Connect with me 🚀</h2>
+    <div class="card icons">
+      <a href="https://discordapp.com/users/593146083530637360" target="_blank"><img src="https://skillicons.dev/icons?i=discord&theme=light" alt="Discord" /></a>
+      <a href="https://github.com/Chakerr" target="_blank"><img src="https://skillicons.dev/icons?i=github&theme=light" alt="GitHub" /></a>
+      <a href="mailto:luisgas012@gmail.com"><img src="https://skillicons.dev/icons?i=gmail&theme=light" alt="Gmail" /></a>
+      <a href="https://www.instagram.com/chakerr_z/" target="_blank"><img src="https://skillicons.dev/icons?i=instagram&theme=light" alt="Instagram" /></a>
+      <a href="https://www.linkedin.com/in/luis-gabriel-romero-castro-11a948268/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin&theme=light" alt="LinkedIn" /></a>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="y"></span> Luis Gabriel Romero Castro • Crafted with 💙
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
